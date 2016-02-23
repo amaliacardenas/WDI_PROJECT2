@@ -1,12 +1,16 @@
 require "sinatra/reloader" if development?
 
+# require flash
+require 'sinatra/flash'
+require_relative '../lib/sinatra-flash'
+register Sinatra::Flash
+
 # Setup app to use SASS
 require 'sass/plugin/rack'
 Sass::Plugin.options[:style] = :compact
 use Sass::Plugin::Rack
 
 # Setup the asset pipeline
-
 register Sinatra::AssetPack
 assets do
   js :application, [
@@ -18,7 +22,6 @@ assets do
     '/bower_components/bootstrap/dist/css/bootstrap.min.css',
     '/stylesheets/style.css'
   ]
-
   js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
   css_compression :simple   # :simple | :sass | :yui | :sqwish
 end
@@ -26,7 +29,7 @@ end
 # Set the views directory
 configure do
   enable :sessions 
-  set :session_secret, ENV['SESSION_SECRET'] || "this is a secret, session"
+  set :session_secret, ENV['SESSION_SECRET'] || "this is a secret, shhh"
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
@@ -38,4 +41,3 @@ APP_NAME = APP_ROOT.basename.to_s
 Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
-
