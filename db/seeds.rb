@@ -1,4 +1,4 @@
-require_relative "../models/tutorial.rb"
+require_relative "../app/models/tutorial.rb"
 
 Tutorial.destroy_all
 [
@@ -38,7 +38,6 @@ Tutorial.destroy_all
     vote: 3,
     category_id: "Node"
   },
-
  {
    title: "Real Python",
    URL: "https://realpython.com/",
