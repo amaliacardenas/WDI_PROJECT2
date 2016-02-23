@@ -1,0 +1,13 @@
+<h2>All Categories</h2>
+<ul class="media-list">
+  <% @categories.each do |category| %>
+    <li class="media">
+      <div class="media-body">
+        <a href="/categories/<%= category.id %>">
+          <h4 class="media-heading"><%= category.title %></h4>
+        </a>
+        <%= category.icon %>
+      </div>
+    </li>
+  <% end %>
+</ul>

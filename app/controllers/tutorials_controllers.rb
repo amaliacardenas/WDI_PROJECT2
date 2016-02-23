@@ -6,7 +6,7 @@ get "/tutorials" do
 
 # NEW
 get "/tutorials/new" do
-  @tutrials = Tutorial.new
+  @tutorial = Tutorial.new
   erb :"tutorials/new"
   end
 
@@ -41,8 +41,17 @@ end
 put '/tutorials/:id' do
    @tutorial = Tutorial.find(params[:id])
   if @tutorial.update(params[:tutorial])
-    redirect "/tutorial/#{@tutorial.id}"
+    redirect "/tutorials/#{@tutorial.id}"
   else
     erb :"tutorials/show"
   end
 end
+
+
+# DESTROY
+delete "/tutorials/:id" do
+  tutorial = Tutorial.find(params[:id])
+  tutorial.destroy
+  redirect "/tutorials"
+end
+

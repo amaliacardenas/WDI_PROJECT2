@@ -52,3 +52,12 @@ put '/users/:id' do
     erb :"users/show"
   end
 end
+
+# DESTROY
+delete "/users/:id" do
+
+  user = User.find(params[:id])
+  user.destroy
+
+  redirect "/users"
+end
