@@ -1,0 +1,12 @@
+<h2><%= @tutorial.title %></h2>
+<% if @tutorial.image %>
+  <img class="media-object" src="<%= @tutorial.image %>" alt="<%= @tutorial.title %>'s image">
+<% else %>
+  <img class="media-object" src="/images/default.png" alt="<%= @tutorial.username %>'s image">
+<% end %>
+<p><%= @tutorial.title %></p>
+<p><%= @tutorial.url %></p>
+<p><%= @tutorial.author %></p>
+<p><%= @tutorial.description %></p>
+<p><%= @tutorial.difficulty %></p>
+<p><%= @tutorial.vote %></p>

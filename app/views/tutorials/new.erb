@@ -1,0 +1,24 @@
+<h1>Tutorials</h1>
+<form id="tutorial" method="post" action="/tutorials">
+  <div class="form-group">
+    <label for="title">Title of Tutorial</label>
+    <input name="tutorial[title]" type="text" class="form-control" id="title" placeholder="title" placeholder="title">
+  </div>
+  <div class="form-group">
+    <label for="URL">URL of tutorial</label>
+    <input name="tutorial[URL]" type="text" class="form-control" id="URL" placeholder="URL" placeholder="URL">
+  </div>
+  <div class="form-group">
+    <label for="author">Author of Tutorial</label>
+    <input name="tutorial[author]" type="text" class="form-control" id="author" placeholder="author">
+  </div>
+  <div class="form-group">
+  <label for="description">What do you like about this tutorial</label>
+  <input name="tutorial[description]" type="text" class="form-control" id="description" placeholder="description">
+  </div>
+  <div class="form-group">
+    <label for="difficulty">Who is this tutorial for? (Beginner, Intermediate, Advanced)</label>
+    <input name="tutorial[difficulty]" type="difficulty" class="form-control" id="difficulty" placeholder="difficulty">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

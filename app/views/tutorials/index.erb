@@ -1,0 +1,22 @@
+<h2>All Tutorials</h2>
+<ul class="media-list">
+  <% @tutorials.each do |tutorial| %>
+    <li class="media">
+      <div class="media-left">
+        <a href="/tutorials/<%= tutorial.id %>">
+          <% if tutorial.image %>
+            <img class="media-object" src="<%= tutorial.image %>" alt="<%= tutorial.title %>'s image">
+          <% else %>
+            <img class="media-object" src="/images/default.png" alt="<%= tutorial.title %>'s image">
+          <% end %>
+        </a>
+      </div>
+      <div class="media-body">
+        <a href="/tutorials/<%= tutorial.id %>">
+          <h4 class="media-heading"><%= tutorial.title %></h4>
+        </a>
+        <%= tutorial.author %>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -6,7 +6,21 @@
     <%= js :application %>
 </head>
 <body>
-    <%= yield %>
+  <header>
+    <nav class="navbar navbar-default">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users">Users</a></li>
+        <li><a href="/users/new">Register</a></li>
+        <li><a href="/tutorials">Tutorials</a></li>
+        <li><a href="/tutorials/new">Add a Tutorial</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+   <%= yield %> 
+  </main>
 </body>
 </html>
 
