@@ -1,3 +1,4 @@
 get '/' do
-  erb :"static/home"
+  @categories = Category.all
+  erb :"categories/index"
 end
