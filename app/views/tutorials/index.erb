@@ -1,6 +1,14 @@
 <h2>All Tutorials</h2>
+
 <ul class="media-list">
   <% @tutorials.each do |tutorial| %>
+    <%= tutorial.votes %>
+    <%#= pluralize tutorial.votes, "vote" %>
+    <% if current_user && current_user.can_vote_for?(tutorial) %>
+      <a href="/tutorials/<%= tutorial.id %>/vote?value=1">up</a>
+      <a href="/tutorials/<%= tutorial.id %>/vote?value=-1">down</a>
+    <% end %> 
+
     <li class="media">
       <div class="media-body">
         <a href="/tutorials/<%= tutorial.id %>">

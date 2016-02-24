@@ -3,11 +3,12 @@
  <input type="text" name="search" placeholder="Search" value="<%= params[:search] %>" class="form-control">
  <button class="btn btn-default">Go</button>
 </form>
-
+<div class="header-video">
 <video autoplay loop poster="/images/hands.jpg" id="bgvid">
    <source src="/videos/hands-typing.webm" type="video/webm">
    <source src="/videos/hands-typing.mp4" type="video/mp4">
 </video>
+</div>
 
 <ul class="media-list">
   <% @categories.each do |category| %>

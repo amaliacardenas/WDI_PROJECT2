@@ -1,21 +1,21 @@
 #INDEX
-  get '/tutorials' do 
-   if params[:search] && !params[:search].empty?
-     @tutorials = Tutorial.where("title LIKE :search",{ search: "%#{params[:search]}%"})
-
-
-   else
-   @tutorials = Tutorial.all 
-   end
-   erb :'tutorials/index'
+get '/tutorials' do 
+  if params[:search] && !params[:search].empty?
+    @tutorials = Tutorial.where("title LIKE :search",{ search: "%#{params[:search]}%"})
+  else
+    @tutorials = Tutorial.all 
   end
+
+
+   erb :'tutorials/index'
+end
 
 # NEW
 get "/tutorials/new" do
   @tutorial = Tutorial.new
   @categories = Category.all
   erb :"tutorials/new"
-  end
+end
 
 
 # CREATE
@@ -61,5 +61,17 @@ delete "/tutorials/:id" do
   tutorial = Tutorial.find(params[:id])
   tutorial.destroy
   redirect "/tutorials"
+end
+
+# VOTE
+get "/tutorials/:id/vote" do
+  vote = current_user.tutorial_votes.new(value: params[:value], tutorial_id: params[:id])
+  if vote.save
+    flash[:message] = "Thank you for voting"
+    redirect "/tutorials"
+  else
+    flash[:danger] = "Unable to vote, perhaps you already did."
+    redirect "/tutorials"
+  end
 end
 
