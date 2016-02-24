@@ -1,25 +1,27 @@
-<h2>All Categories</h2>
-<form id="search-form" class="form-inline" action="/tutorials">
- <input type="text" name="search" placeholder="Search" value="<%= params[:search] %>" class="form-control">
- <button class="btn btn-default">Go</button>
-</form>
-<div class="header-video">
-<video autoplay loop poster="/images/hands.jpg" id="bgvid">
+  <div class="header-video">
+    <div class="centered">
+      <h1><i class="fa fa-code"></i><br> Learn Code</h1>
+      <h3 class="css-typing">A curated list of coding and design resources for people who are helping change the world through code.</h3>
+    </div>
+    <video autoplay loop poster="/images/hands.jpg" id="bgvid">
    <source src="/videos/hands-typing.webm" type="video/webm">
    <source src="/videos/hands-typing.mp4" type="video/mp4">
-</video>
-</div>
-
-<ul class="media-list">
+    </video>
+  </div>
+<div>
+<div class="container">
+<div class="row">
   <% @categories.each do |category| %>
-    <li class="media">
-      <div class="media-body">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+      <img src="http://lorempixel.com/600/400/animals/<%= category.id %>">
         <a href="/categories/<%= category.id %>">
           <h4 class="media-heading"><%= category.title %></h4>
         </a>
-        <img src="<%= category.icon %>">
-        
+        <img src="<%= category.icon %>">  
       </div>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
+</div>
+</div>

@@ -1,21 +1,36 @@
 <h2>All Tutorials</h2>
-
-<ul class="media-list">
-  <% @tutorials.each do |tutorial| %>
+<form id="search-form" class="form-inline" action="/tutorials">
+ <input type="text" name="search" placeholder="Search" value="<%= params[:search] %>" class="form-control">
+ <button class="btn btn-default">Go</button>
+</form>
+  <div class="container">
+  <div class="row">
+  <% @tutorials.each_with_index do |tutorial, index| %>
+    
+    <% index += 1 %>
+    <% puts index %>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+    <div class="top-bar">
     <%= tutorial.votes %>
     <%#= pluralize tutorial.votes, "vote" %>
     <% if current_user && current_user.can_vote_for?(tutorial) %>
       <a href="/tutorials/<%= tutorial.id %>/vote?value=1">up</a>
       <a href="/tutorials/<%= tutorial.id %>/vote?value=-1">down</a>
     <% end %> 
-
-    <li class="media">
-      <div class="media-body">
+    </div>
         <a href="/tutorials/<%= tutorial.id %>">
-          <h4 class="media-heading"><%= tutorial.title %></h4>
+          <h4 class="caption"><%= tutorial.title %></h4>
         </a>
         <%= tutorial.author %>
+        <%= tutorial.description %>
       </div>
-    </li>
+    </div>
+    <% if index%3 == 0 && index > 1%>
+      </div>
+      <div class="row">
+    <% end %>
   <% end %>
-</ul>
+</div>
+</div>
+

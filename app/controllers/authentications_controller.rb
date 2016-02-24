@@ -4,9 +4,6 @@ get '/register' do
  erb :'authentications/new' 
 end
 
-# edit
-
-
 
 #handle the form 
 
