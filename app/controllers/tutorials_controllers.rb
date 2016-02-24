@@ -1,12 +1,19 @@
-# INDEX
-get "/tutorials" do
-  @tutorials = Tutorial.all
-  erb :"tutorials/index"
+#INDEX
+  get '/tutorials' do 
+   if params[:search] && !params[:search].empty?
+     @tutorials = Tutorial.where("title LIKE :search",{ search: "%#{params[:search]}%"})
+
+
+   else
+   @tutorials = Tutorial.all 
+   end
+   erb :'tutorials/index'
   end
 
 # NEW
 get "/tutorials/new" do
   @tutorial = Tutorial.new
+  @categories = Category.all
   erb :"tutorials/new"
   end
 
@@ -34,6 +41,7 @@ end
 # EDIT
 get "/tutorials/:id/edit" do
   @tutorial = Tutorial.find(params[:id])
+  @categories = Category.all
   erb :"tutorials/edit"
 end
 

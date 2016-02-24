@@ -10,7 +10,7 @@ Category.destroy_all
     URL: "https://www.railstutorial.org/book",
     author: "Michael Hartl",
     description: "Michael Hartl's epic tutorial covers everything from installing Rails to using Github, deploying on Heroku and writing tests. It takes awhile to get through but once you've finished you'll be set to start writing your own apps. - @kateray",
-    difficulty: "Beginer",
+    difficulty: "Beginner",
     vote: 5,
     category_id: 1
   },
@@ -46,7 +46,7 @@ Category.destroy_all
    URL: "https://realpython.com/",
    author: "Fletcher Heisler",
    description: "Real Python teaches Python and web development from the ground up, everything from the basic primitives to web scraping to data visualization and all things web development!",
-   difficulty: "Beginer",
+   difficulty: "Beginner",
    vote: 4,
    category_id: "5"
  }
@@ -94,3 +94,18 @@ end
 ].each do |category|
   Category.create!(category)
 end
+
+# [  
+#   {
+#     difficulty: "Beginner",
+#   },
+#   {
+#    difficulty: "Intermediate",
+#    },
+#   {
+#     difficulty: "Advanced",
+#   }
+# ].each do |tutorial|
+#   Tutorial.create!(tutorial)
+# end
+

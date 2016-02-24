@@ -1,28 +1,36 @@
 <h1>Tutorials</h1>
 <form id="tutorial" method="post" action="/tutorials">
   <div class="form-group">
-    <label for="title">Title of Tutorial</label>
+    <label for="tutorial[title]">Title of Tutorial</label>
     <input name="tutorial[title]" type="text" class="form-control" id="title" placeholder="title" placeholder="title">
   </div>
   <div class="form-group">
-    <label for="category_id">What category should this tutorial be in? (HTML, Javascript, Ruby, Design)</label>
-    <input name="tutorial[category_id]" type="category_id" class="form-control" id="category_id" placeholder="category_id">
+    <label for="tutorial[category_id]">What category should this tutorial be in?</label>
+    <select name="tutorial[category_id]" class="form-control">
+      <% @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.title %></option>
+      <% end %>
+    </select>
   </div>
   <div class="form-group">
-    <label for="URL">URL of tutorial</label>
+    <label for="tutorial[URL]">URL of tutorial</label>
     <input name="tutorial[URL]" type="text" class="form-control" id="URL" placeholder="URL" placeholder="URL">
   </div>
   <div class="form-group">
-    <label for="author">Author of Tutorial</label>
+    <label for="tutorial[author]">Author of Tutorial</label>
     <input name="tutorial[author]" type="text" class="form-control" id="author" placeholder="author">
   </div>
   <div class="form-group">
-  <label for="description">What do you like about this tutorial?</label>
+  <label for="tutorial[description]">What do you like about this tutorial?</label>
   <input name="tutorial[description]" type="text" class="form-control" id="description" placeholder="description">
   </div>
   <div class="form-group">
     <label for="difficulty">Who is this tutorial for? (Beginner, Intermediate, Advanced)</label>
-    <input name="tutorial[difficulty]" type="difficulty" class="form-control" id="difficulty" placeholder="difficulty">
+    <select name="tutorial[difficulty]" type="difficulty" class="form-control" id="difficulty" placeholder="difficulty">
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
