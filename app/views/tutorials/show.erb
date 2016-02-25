@@ -1,3 +1,10 @@
+<section class="second-header"> 
+  <br>
+  <br>
+  <br>
+  <h2>Search All Tutorials</h2>
+ </section>
+ <div class="">
 <div class="container1">
 <h2><%= @tutorial.title %></h2>
 <p><%= @tutorial.title %></p>
@@ -6,14 +13,15 @@
 <p><%= @tutorial.description %></p>
 <p><%= @tutorial.difficulty %></p>
 <p><%= @tutorial.vote %></p>
+
+<% if current_user && current_user.can_delete?(@tutorial) %>
 <form method="get" action='/tutorials/<%= @tutorial.id %>/edit'>
   <button type="submit" class="btn btn-default">Edit</button>
 </form>
-
-<% if current_user.can_delete?(@tutorial) %>
 <form method="post" action="/tutorials/<%= @tutorial.id%>">
   <input type="hidden" name="_method" value="delete">
   <button>Delete</button>
 </form>
 <% end %>
+</div>
 </div>
