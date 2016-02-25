@@ -1,8 +1,16 @@
+<section class="second-header"> 
+  <br>
+  <br>
+  <br>
+  <h1><%= @category.title %></h1>
+ </section>
+ <section class="container">
+ <br>
+ <br>
+ <br>
+<section class="container">
 
 <div>
-  <h1><%= @category.title %></h1>
-
-
   <% @category.tutorials.each_with_index do |tutorial, index|%>
     <% index += 1 %>
     <% puts index %>
@@ -28,7 +36,7 @@
   <div class="row">
     <% end %>
   <% end %>
-
 </div>
+</section>
 
 
