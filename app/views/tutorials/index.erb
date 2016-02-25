@@ -17,11 +17,11 @@
     <div class="col-sm-4">
       <div class="thumbnail">
         <div class="top-bar">
-          <p>Number of votes: <%= tutorial.votes %></p>
+          <p>Total votes: <%= tutorial.votes %></p>
           <%#= pluralize tutorial.votes, "vote" %>
           <% if current_user && current_user.can_vote_for?(tutorial) %>
-          <a href="/tutorials/<%= tutorial.id %>/vote?value=1">up</a>
-          <a href="/tutorials/<%= tutorial.id %>/vote?value=-1">down</a>
+          <a href="/tutorials/<%= tutorial.id %>/vote?value=1" class="vote-up-down">Vote up</a>
+          <a href="/tutorials/<%= tutorial.id %>/vote?value=-1"class="vote-up-down" >Vote down</a>
           <% end %> 
         </div>
         <a href="/tutorials/<%= tutorial.id %>">
@@ -29,6 +29,7 @@
         </a>
         <%= tutorial.author %>
         <%= tutorial.description %>
+        <%= tutorial.difficulty %>
       </div>
     </div>
     <% if index%3 == 0 && index > 1%>
