@@ -1,27 +1,38 @@
-  <div class="header-video">
-    <div class="centered">
-      <h1><i class="fa fa-code"></i><br> Learn Code</h1>
-      <h3 class="css-typing">A curated list of coding and design resources for people who are helping change the world through code.</h3>
-    </div>
-    <video autoplay loop poster="/images/hands.jpg" id="bgvid">
-   <source src="/videos/hands-typing.webm" type="video/webm">
-   <source src="/videos/hands-typing.mp4" type="video/mp4">
-    </video>
-  </div>
-<div>
-<div class="container">
-<div class="row">
-  <% @categories.each do |category| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-      <img src="http://lorempixel.com/600/400/animals/<%= category.id %>">
-        <a href="/categories/<%= category.id %>">
-          <h4 class="media-heading"><%= category.title %></h4>
-        </a>
-        <img src="<%= category.icon %>">  
-      </div>
-    </div>
-  <% end %>
-</div>
-</div>
-</div>
+       <section class="home_header">
+        <div class="centered">
+          <h1><i class="fa fa-code"></i><br> Learn Code</h1>
+          <h3 class="css-typing">A curated list of coding and design resources for people who are </h3>
+          <h3 class="css-typing">helping change the world through code.</h3>
+        </div>
+        <video autoplay loop poster="/images/hands.jpg">
+         <source src="/videos/hands-typing.webm" type="video/webm">
+          <source src="/videos/hands-typing.mp4" type="video/mp4">
+          </video> 
+        </section>
+
+        <div class="mail-chimp-container">
+          <p>Doesn't it feel good to know how to code? Sign up for free tips to help you turn into a code ninja!</p>
+          <form class="validate" id="mc-embedded-subscribe-form" action="//anybodycancode.us11.list-manage.com/subscribe/post?u=04c216bf20f1918eb0b82221b&amp;id=101ca80eba" method="post" name="mc-embedded-subscribe-form" novalidate=""target="_blank">
+            <input class="surveymonkey-form" type="text" name="FNAME" placeholder="Your first name" required="required">
+            <input class="surveymonkey-form" type="text" name="LNAME" placeholder="Your last name" required="required">
+            <input class="surveymonkey-form" type="email" name="EMAIL" placeholder="Your email address" required="required">
+            <input class="surveymonkey-button" type="submit" value="Subscribe">
+          </form>
+        </div>
+
+        <h4>Tutorials</h4>
+        <div class="container">
+          <div class="row">
+            <% @categories.each do |category| %>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+               <!--  <img src="<%= category.id %>"> -->
+                <a href="/categories/<%= category.id %>"></a>
+                <img src="<%= category.icon %>"class="category-images"> 
+                <h5 class="category-titles"><%= category.title %></h4> 
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      

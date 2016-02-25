@@ -1,14 +1,13 @@
-<ul class="media-list">
-  <% @categories.each do |category| %>
-    <li class="media">
-      <div class="media-body">
-        <a href="/categories/<%= tutorial.icon %>">
-          <h4 class="media-heading"><%= tutorial.icon %></h4>
-        </a>
-        <%= category.title %>
-        <%= @category.icon %>
+<div>
+  <h1><%= @category.title %></h1>
 
-      </div>
-    </li>
+
+  <ul>
+  <% @category.tutorials.each do |tutorial|%>
+    <li><%= tutorial.title %></li>
   <% end %>
-</ul>
+  </ul>
+
+</div>
+
+

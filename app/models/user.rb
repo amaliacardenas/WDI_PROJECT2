@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     tutorial_votes.build(value: 1, tutorial: tutorial).valid?
   end
 
+  def can_delete?(tutorial)
+    tutorials.include?(tutorial)
+  end
+
   has_secure_password
 
 end

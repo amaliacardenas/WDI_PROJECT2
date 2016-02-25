@@ -1,25 +1,58 @@
-body { font-family: 'Roboto', sans-serif; }
+/*******BODY ON ALL PAGES*****************************************/
+body { background: #fafafa !important; }
+
+/*******NAV BAR*****************************************/
+.nav.navbar-nav.navbar-right li a { color: #f5f5f5; font-family: 'Roboto', sans-serif; font-size: 18px; text-shadow: 3px 3px 3px black; background-color: transparent; }
+
+.nav.navbar-nav.navbar-right li a:hover { color: #0077b5; font-family: 'Roboto', sans-serif; font-size: 18px; text-shadow: 3px 3px 3px black; background-color: transparent; }
+
+/*******HEADER*****************************************/
+section.home_header { position: relative; z-index: -1; margin-top: -72px; }
+
+h1 { font-family: 'Roboto', sans-serif; text: 100px; color: #f5f5f5; }
 
 div.centered { margin-top: -100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
-h1, h3 { text-align: center; }
+h1, h3, h4 { text-align: center; }
 
 h1 { color: #fff; font-size: 100px; text-shadow: 3px 3px 30px black; }
 
-h3 { font-size: 30px; color: #f2f2f2; font-weight: 400; }
+h3 { font-size: 30px; color: #f2f2f2; font-weight: 400; text-shadow: 3px 3px 3px black; }
+
+h4 { font-size: 30px; color: #2d3538; font-weight: 400; margin-bottom: 30px; }
+
+.normal-heading { font-size: 30px; color: #f2f2f2; font-weight: 400; }
 
 .css-typing { width: 30em; white-space: nowrap; overflow: hidden; -webkit-animation: type 5s steps(50, end); animation: type 5s steps(50, end); }
 
 @keyframes type { from { width: 0; } }
 @-webkit-keyframes type { from { width: 0; } }
-/*******HEADER*****************************************/
-video#bgvid { position: relative; top: 60%; left: 50%; min-width: 560px; min-height: 360px; width: auto; height: auto; z-index: -100; -ms-transform: translateX(-50%) translateY(-50%); -moz-transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); header: url(/images/test.jpg) no-repeat; header-size: cover; }
+.header-video { background: red; }
 
-h1 { font-family: 'Roboto', sans-serif; text: 100px; color: #f5f5f5; }
-
-/*******TUTORIALS MAIN*****************************************/
+/*******MAIN TUTORIALS PAGE*****************************************/
 .top-bar { background-color: green; border-top-left-radius: 4px; border-top-right-radius: 4px; border: green; height: 58px; }
 
 .thumbnail { padding: 0px; border-radius: 5px 5px 4px 4px; border: 0px solid; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06); background: #fff; height: 310px; }
+
+/*******MAIN CATEGORIES ON HOMEPAGE*****************************************/
+.category-images { width: 40%; height: auto; padding-top: 40px; }
+
+/*******MAILCHIMP SIGN UP ON HOMEPAGE*****************************************/
+.mail-chimp-container { margin-top: -10px; padding-top: 50px; font-family: 'Roboto', sans-serif; font-color: #fafafa; background-color: black; height: 180px; text-align: center; margin-bottom: 100px; }
+
+.mail-chimp-container p { font-family: 'Roboto', sans-serif; color: #fafafa; font-size: 25px; text-align: center; }
+
+video { width: 100%; height: auto; }
+
+.surveymonkey-form { align: right; font-size: 20px; margin: 5px; padding: 2px 2px 2px 10px; }
+
+.surveymonkey-button { background-color: #e01563; border: 1px solid #e01563; font-size: 20px; margin: 5px; padding: 2px 2px 2px 10px; width: 150px; height: 36px; }
+
+/*******FOOTER*****************************************/
+footer { background-color: black; margin-top: 250px; font-size: 1.5em; text-align: center; padding-top: 50px; color: #ccc; height: 200px; }
+
+footer { clear: both; }
+
+.social-icon { width: 20px; height: 20px; margin: 0 5px; }
 
 /*# sourceMappingURL=style.css.map */

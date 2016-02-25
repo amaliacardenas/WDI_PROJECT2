@@ -9,49 +9,50 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+    <nav class="navbar navbar-default; navbar-transparent; navbar-custom">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/tutorials">Tutorials</a></li>
+            <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/tutorials"><i class="fa fa-leanpub"></i> Tutorials</a></li>
             <% if is_logged_in? %>
-            <li><a href="/tutorials/new">Add a Tutorial</a></li>
+            <li><a href="/tutorials/new"><i class="fa fa-plus-circle"></i> Add a Tutorial</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-                <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
+                <li><a href="/users/<%= current_user.id %>/edit"></i>Edit Profile</a></li>
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
             <% else %> 
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/register"><i class="fa fa-user-plus"></i> Register</a></li>
+            <li><a href="/login"><i class="fa fa-unlock"></i>Login</a></li>
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
 
-
-
-
-      <!-- <ul>
-        <li><a href="/">Home</a></li>
-
-        <li><a href="/login">Login</a></li>
-
-        <li><a href="/users">Users</a></li>
-        <li><a href="/users/new">Register</a></li>
-        <li><a href="/tutorials">Tutorials</a></li>
-        <li><a href="/tutorials/new">Add a Tutorial</a>
-        </li>
-      </ul> -->
     </nav>
   </header>
   <main>
-  <%= styled_flash %>
+   <%= styled_flash %>
    <%= yield %> 
   </main>
+  <footer>
+     <a href="https://github.com/amaliacardenas">
+     <i id="#icons" class="fa fa-github-alt"></i>
+     </a>
+     <a href="https://www.facebook.com/anybodycancode">
+     <i id="#icons" class="fa fa-facebook-official"></i>
+     </a>
+     <a href="https://plus.google.com/u/0/b/109461968104592175501/109461968104592175501/posts">
+     <i id="#icons" class="fa fa-google-plus"></i>
+     </a>
+     <a href="https://www.youtube.com/channel/UCAhVkExM_IB06IIMAM0M3Mw">
+     <i id="#icons" class="fa fa-youtube"></i>
+     </a>
+   <p><i class="fa fa-creative-commons"></i> 2015 anybodycancode </p>
+  </footer>
 </body>
 </html>
 

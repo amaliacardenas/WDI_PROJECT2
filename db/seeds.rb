@@ -4,15 +4,57 @@ require_relative "../app/models/category.rb"
 Tutorial.destroy_all
 Category.destroy_all
 
-[
+categories = [
+  { 
+    title: "Rails",
+    icon: "http://svgporn.com/logos/rails.svg"
+  },
+  { 
+    title: "iOS",
+    icon: "http://svgporn.com/logos/ios.svg"
+  },
+  { 
+    title: "Backbone",
+    icon: "http://svgporn.com/logos/backbone-icon.svg"
+  },
+  { 
+    title: "Node",
+    icon: "http://svgporn.com/logos/nodejs-icon.svg"
+  },
+  { 
+    title: "Python",
+    icon: "http://svgporn.com/logos/python.svg"
+  },
+  { 
+    title: "Javascript",
+    icon: "http://svgporn.com/logos/javascript.svg"
+  },
+  { 
+    title: "Ruby",
+    icon: "http://svgporn.com/logos/ruby.svg"
+  },
+  { 
+    title: "HTML",
+    icon: "http://svgporn.com/logos/html-5.svg"
+  },
+  { 
+    title: "CSS",
+    icon: "http://svgporn.com/logos/css-3.svg"
+  }
+]
+
+categories.each do |category|
+  Category.create!(category)
+end
+
+tutorials = [
   {
     title: "Michael Hartl's Rails Tutorial",
     URL: "https://www.railstutorial.org/book",
     author: "Michael Hartl",
     description: "Michael Hartl's epic tutorial covers everything from installing Rails to using Github, deploying on Heroku and writing tests. It takes awhile to get through but once you've finished you'll be set to start writing your own apps. - @kateray",
     difficulty: "Beginner",
-    vote: 5,
-    category_id: 1
+    category_id: Category.where(title: "Ruby")[0].id
   },
   {
     title: "iOS Programming: The Big Nerd Ranch Guide",
@@ -20,8 +62,7 @@ Category.destroy_all
     author: "Joe Conway",
     description: "Big Nerd Ranch is one of the leading publishers of mobile app dev books. This book is extremely in-depth and teaches you a lot about Objective C and some theory around iOS dev. - @kateray",
     difficulty: "Beginner",
-    vote: 5,
-    category_id: "2"
+    category_id: Category.where(title: "iOS")[0].id
   },
   {
     title: "Make a ToDo app",
@@ -29,8 +70,7 @@ Category.destroy_all
     author: "Jérôme Gravel-Niquet",
     description: "Great simple example Backbone app. Has a model, view, and collection, and persists data locally using LocalStorage. - @kateray",
     difficulty: "Beginner",
-    vote: 3,
-    category_id: "3"
+    category_id: Category.where(title: "Backbone")[0].id
   },
   {
     title: "The Node Beginner Book",
@@ -38,61 +78,20 @@ Category.destroy_all
     author: "Manuel Kiessling",
     description: "A very comprehensive introduction to Node and Javascript. - @kateray",
     difficulty: "Beginner",
-    vote: 3,
-    category_id: "4"
+    category_id: Category.where(title: "Node")[0].id
   },
- {
-   title: "Real Python",
-   URL: "https://realpython.com/",
-   author: "Fletcher Heisler",
-   description: "Real Python teaches Python and web development from the ground up, everything from the basic primitives to web scraping to data visualization and all things web development!",
-   difficulty: "Beginner",
-   vote: 4,
-   category_id: "5"
- }
-].each do |tutorial|
-  Tutorial.create!(tutorial)
-end
-[
-  { 
-    title: "Rails",
-    icon: "https://cdn1.iconfinder.com/data/icons/simple-icons/2048/rails-2048-black.png"
-  },
-  { 
-    title: "iOS",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "Backbone",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "Node",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "Python",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "Javascript",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "Ruby",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "HTML",
-    icon: "PICTURE HERE"
-  },
-  { 
-    title: "CSS",
-    icon: "PICTURE HERE"
+  {
+    title: "Real Python",
+    URL: "https://realpython.com/",
+    author: "Fletcher Heisler",
+    description: "Real Python teaches Python and web development from the ground up, everything from the basic primitives to web scraping to data visualization and all things web development!",
+    difficulty: "Beginner",
+    category_id: Category.where(title: "Python")[0].id
   }
+]
 
-].each do |category|
-  Category.create!(category)
+tutorials.each do |tutorial|
+  Tutorial.create!(tutorial)
 end
 
 # [  
