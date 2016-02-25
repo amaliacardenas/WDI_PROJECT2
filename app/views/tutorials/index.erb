@@ -1,25 +1,29 @@
-<section class="second-header"><p>Click to view all tutorials</p></section>
-<h2>All Tutorials</h2>
-<form id="search-form" class="form-inline" action="/tutorials">
- <input type="text" name="search" placeholder="Search" value="<%= params[:search] %>" class="form-control">
- <button class="btn btn-default">Go</button>
-</form>
-  <div class="container">
+<section class="second-header">
+  <br>
+  <br>
+  <br>
+  <h2>Search All Tutorials</h2>
+  <form id="search-form" class="form-inline" action="/tutorials">
+    <input type="text" name="search" placeholder="Search" value="<%= params[:search] %>" class="form-control">
+    <button class="btn btn-default">Go</button>
+  </form>
+</section>
+<div class="container">
   <div class="row">
-  <% @tutorials.each_with_index do |tutorial, index| %>
+    <% @tutorials.each_with_index do |tutorial, index| %>
     
     <% index += 1 %>
     <% puts index %>
     <div class="col-sm-4">
       <div class="thumbnail">
-    <div class="top-bar">
-    <%= tutorial.votes %>
-    <%#= pluralize tutorial.votes, "vote" %>
-    <% if current_user && current_user.can_vote_for?(tutorial) %>
-      <a href="/tutorials/<%= tutorial.id %>/vote?value=1">up</a>
-      <a href="/tutorials/<%= tutorial.id %>/vote?value=-1">down</a>
-    <% end %> 
-    </div>
+        <div class="top-bar">
+          <p>Number of votes: <%= tutorial.votes %></p>
+          <%#= pluralize tutorial.votes, "vote" %>
+          <% if current_user && current_user.can_vote_for?(tutorial) %>
+          <a href="/tutorials/<%= tutorial.id %>/vote?value=1">up</a>
+          <a href="/tutorials/<%= tutorial.id %>/vote?value=-1">down</a>
+          <% end %> 
+        </div>
         <a href="/tutorials/<%= tutorial.id %>">
           <h4 class="caption"><%= tutorial.title %></h4>
         </a>
@@ -28,10 +32,10 @@
       </div>
     </div>
     <% if index%3 == 0 && index > 1%>
-      </div>
-      <div class="row">
+  </div>
+  <div class="row">
     <% end %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>
 

@@ -123,12 +123,14 @@ h4 {
 }
 
 .thumbnail{
+  position: relative;
   padding: 0px;
   border-radius: 5px 5px 4px 4px;
   border: 0px solid;
   box-shadow: 0 2px 0 rgba(0,0,0,0.06);
   background: #fff;
   height: 310px;
+  margin-top: 70px;
 }
 
 
@@ -146,12 +148,17 @@ h4 {
 ***********************************************************/
 
 .category-images{
-  width:40%;
-  height:auto;
+  width: 40%;
+  height: 100px;
   padding-top: 40px;
 }
 
 .category-titles{
+  margin-top: 115px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   text-align: center;
   font-size: 30px;
 
@@ -226,6 +233,10 @@ footer {
 }
 
 
+
+.containter {
+  margin-top: 20px;
+}
 
 
 

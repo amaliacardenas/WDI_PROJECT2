@@ -5,7 +5,7 @@
           <h3 class="css-typing">helping change the world through code.</h3>
         </div>
         <video autoplay loop poster="/images/hands.jpg">
-         <source src="/videos/hands-typing.webm" type="video/webm">
+      <!--    <source src="/videos/hands-typing.webm" type="video/webm"> -->
           <source src="/videos/hands-typing.mp4" type="video/mp4">
           </video> 
         </section>
@@ -27,8 +27,9 @@
             <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                <!--  <img src="<%= category.id %>"> -->
-                <a href="/categories/<%= category.id %>"></a>
+                <a href="/categories/<%= category.id %>">
                 <img src="<%= category.icon %>"class="category-images"> 
+                </a>
                 <h5 class="category-titles"><%= category.title %></h4> 
               </div>
             </div>
